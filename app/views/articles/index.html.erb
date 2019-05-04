@@ -34,7 +34,14 @@
                   by <a href="#"><%= article.user.username %></a>
                 </h4>
                 <h3><%= link_to article.title, article %></h3>
-                <p><%= article.content %></p>
+                <p>
+                  <% if article.content.length > 250 %>
+                    <%= truncate(article.content, length: 250) %>
+                    <%= link_to "Read More...", article %>
+                  <% else %>
+                    <%= article.content %>
+                  <% end %>
+                </p>
               </div>
               <div>
                 <% if user_signed_in? && current_user.admin? %>
