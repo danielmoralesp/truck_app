@@ -21,7 +21,7 @@
 
             <% @articles.each do |article| %>
               <div class="caption">
-                <h4><%= article.created_at %>   by <a href="#">Admin</a></h4>
+                <h4><%= time_ago_in_words(article.created_at)  %> ago   by <a href="#">Admin</a></h4>
                 <h3><%= link_to article.title, article %></h3>
                 <p><%= article.content %></p>
               </div>
