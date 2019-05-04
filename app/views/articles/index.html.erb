@@ -11,17 +11,28 @@
   </div>
 </section>
 
+
+
 <!-- BLOG SECTION -->
 <section class="clearfix">
   <div class="container">
     <div class="row">
       <div class="col-sm-8 col-xs-12">
+
+        <% if user_signed_in? && current_user.admin? %>
+          <div class="form-group mgnBtm0">
+            <%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
+          </div>
+        <% end %>
+
         <div class="blogInnerWrapper">
           <div class="thumbnail blogInner ">
 
             <% @articles.each do |article| %>
               <div class="caption">
-                <h4><%= time_ago_in_words(article.created_at)  %> ago   by <a href="#">Admin</a></h4>
+                <h4><%= time_ago_in_words(article.created_at)  %> ago   
+                  by <a href="#">Admin</a>
+                </h4>
                 <h3><%= link_to article.title, article %></h3>
                 <p><%= article.content %></p>
               </div>
