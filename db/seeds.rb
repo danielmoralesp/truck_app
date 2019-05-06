@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+#### 
+
+# - Modelo Truck y tiene 5 campos
+# - 100 trucks
+# - en 3 meses, le añadimos un campo adicional.
+# - ese nuevo campo queda nil
+# - que pasa si tengo un index controller:
+# 	@trucks = Truck.all
+# - la vista esta:
+# 	@trucks.each do |truck|
+# 		truck.nuevo_campo.present? ? truck.nuevo_campo : 0
+# 	end
