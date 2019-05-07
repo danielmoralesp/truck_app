@@ -9,8 +9,15 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order(created_at: :desc)
     @categories = Category.all
+    
+    if params[:category].blank?
+      @articles = Article.all.order(created_at: :desc)
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @articles = Article.where(category_id: @category_id).order(created_at: :desc)
+    end
+    # link_to articles_path(category: category.name)
   end
 
   # GET /articles/1
