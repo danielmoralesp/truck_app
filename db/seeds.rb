@@ -3,8 +3,8 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+  # Character.create(name: 'Luke', movie: movies.first)
 
 
 #### 
@@ -19,3 +19,13 @@
 # 	@trucks.each do |truck|
 # 		truck.nuevo_campo.present? ? truck.nuevo_campo : 0
 # 	end
+
+Category.delete_all
+Category.create(
+	[
+		{ name: "Trucks" },
+		{ name: "Shippers" },
+		{ name: "Truckers" },
+		{ name: "Other" }
+	]
+)
