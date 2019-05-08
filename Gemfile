@@ -36,6 +36,9 @@ gem "font-awesome-rails"
 ## Users Managment
 gem 'devise'
 
+## Environment Variables
+gem "figaro"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
