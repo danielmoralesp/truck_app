@@ -108,3 +108,13 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 end
+
+
+
+
+##### - ENVIAR CORREO A TODOS LOS USUARIOS CON ROL USER
+##### - EL CORREO SE ENVIA CUANDO SE CREA UN NUEVO ARTICULO
+
+
+
+

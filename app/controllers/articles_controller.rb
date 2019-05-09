@@ -42,6 +42,17 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+
+        title = @article.title
+        id = @article.id
+        users = User.where(role: "user")
+
+        users.each do |user|
+          email = user.email
+          username = user.username
+          UserNotifierMailer.new_article(email, title, id, username).deliver_now
+        end
+
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
