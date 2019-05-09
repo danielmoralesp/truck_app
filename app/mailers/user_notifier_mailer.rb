@@ -13,7 +13,7 @@ class UserNotifierMailer < ApplicationMailer
 		@title = title
 		@id = id
 		@username = username
-		@url = "http://localhost:3000/articles/#{@id}"
+		@url = "https://truck-app-heroku-16.herokuapp.com/articles/#{@id}"
 		mail(to: @email, subject: "#{@title} - New Article on TruckApp")
 	end
 end
